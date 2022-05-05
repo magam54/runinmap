@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/msgboard.css">
+    <script src='static/msgboard.js' defer></script>
+    <title>留言板</title>
+</head>
+<body>
+    <p>發表一篇圖文</p>
+    <form id="sendmsg" action="">
+        <p>文字內容<input type="text" name="msg" placeholder="選擇一張圖片後送出"></p>
+        <label for="img">圖片檔案</label>
+        <input type="file" id="img" name="img" accept="image/*">
+        <br><input type="submit" value="送出">
+      </form>
+    <hr>
+    <div id="board">    
+
+    </div>
+
+</body>
+</html>
