@@ -1,0 +1,29 @@
+services:
+  nginx:
+    image: nginx:1.21
+    container_name: nginx
+    volumes:
+      - ./default.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - flask
+    restart: always
+    networks:
+      - mynetwork
+    links:
+      - flask
+  flask:
+    build:
+      context: runinmap_Project
+    container_name: flask
+    ports:
+      - "4000:4000"
+    networks:
+      mynetwork:
+        aliases:
+          - flask
+
+networks:
+  mynetwork:
+    driver: bridge
